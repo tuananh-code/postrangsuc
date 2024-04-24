@@ -204,10 +204,16 @@
                                                         &#8363;</p>
                                                 </div>
                                             </div>
-                                            <a class="prevImg"
-                                                onclick="plusSlides(-1, {{ $all['id'] }})">&#10094;</a>
-                                            <a class="nextImg"
-                                                onclick="plusSlides(1, {{ $all['id'] }})">&#10095;</a>
+                                            @foreach ($arrayMedia as $key => $value)
+                                                @if ($key == $all['id'])
+                                                    @if ($value)
+                                                        <a class="prevImg"
+                                                            onclick="plusSlides(-1, {{ $all['id'] }})">&#10094;</a>
+                                                        <a class="nextImg"
+                                                            onclick="plusSlides(1, {{ $all['id'] }})">&#10095;</a>
+                                                    @endif
+                                                @endif
+                                            @endforeach
                                         </li>
                                     @endforeach
                                 </ul>
