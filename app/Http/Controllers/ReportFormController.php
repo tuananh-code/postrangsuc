@@ -94,6 +94,7 @@ class ReportFormController extends Controller
             'products.type',
             'c1.name as category',
             'c2.name as sub_category',
+            'products.category_id as category_id',
             'units.actual_name as unit',
             'brands.name as brand',
             'tax_rates.name as tax',
@@ -126,6 +127,7 @@ class ReportFormController extends Controller
             $items['id'] = $product->id;
             $items['product'] = $product->product;
             $items['category'] = $product->category;
+            $items['category_id'] = $product->category_id;
             $items['image'] = $product->image;
             $items['max_price'] = $product->max_price;
             $items['current_stock'] = $product->current_stock;
@@ -265,12 +267,12 @@ class ReportFormController extends Controller
         $getField3 = $product->getAttributes()['product_custom_field3'];
         $getField4 = $product->getAttributes()['product_custom_field3'];
         // Get Category
-        if($product->getRelations()['category']){
-             $getCategory = $product->getRelations()['category']->getAttributes()['name'];
-        } else{
+        if ($product->getRelations()['category']) {
+            $getCategory = $product->getRelations()['category']->getAttributes()['name'];
+        } else {
             $getCategory = 'Chưa phân loại';
         }
-       
+
         // Get all Image children to get slideshow
         $getRelations = $product->getRelations()['variations'];
         $getVariations = $getRelations[0]->getRelations();
@@ -297,11 +299,11 @@ class ReportFormController extends Controller
             'sku' => $getSku,
             'bar_code' => $getBarcode,
             'weight' => $getWeight,
-            'description'=>$getDescription,
-            'custom_field1'=>$getField1,
-            'custom_field2'=>$getField2,
-            'custom_field3'=>$getField3,
-            'custom_field4'=>$getField4,
+            'description' => $getDescription,
+            'custom_field1' => $getField1,
+            'custom_field2' => $getField2,
+            'custom_field3' => $getField3,
+            'custom_field4' => $getField4,
             'image' => $getImage,
             'fileNames' => $fileNames
         ];
@@ -328,6 +330,7 @@ class ReportFormController extends Controller
 
         foreach ($getCategory as $category) {
             $items = [];
+            $items['id'] = $category->id;
             $items['name'] = $category->name;
             $items['short_code'] = $category->short_code;
             $items['description'] = $category->description;

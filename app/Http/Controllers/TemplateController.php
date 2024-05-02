@@ -27,11 +27,10 @@ class TemplateController extends Controller
             $media = $reportFormController->getImage($id);
             $arrayMedia[$id] = $media;
         }
-        // dd($arrayProduct);
         return view('template.pnj.index')->with(compact(
             'arrayProduct',
             'arrayCategory',
-            'arrayMedia'
+            'arrayMedia',
         ));
     }
 
@@ -40,7 +39,7 @@ class TemplateController extends Controller
         $reportFormController = new ReportFormController();
         $allProduct = $reportFormController->showAllData();
         $arrayProduct = $reportFormController->showData($id);
-       
+
         // dd($allProduct);
         return view('template.layout')->with(compact(
             'allProduct',
@@ -48,7 +47,8 @@ class TemplateController extends Controller
         ));
     }
 
-    public function checkout($id){
+    public function checkout($id)
+    {
         $reportFormController = new ReportFormController();
         $arrayProduct = $reportFormController->showData($id);
         // dd($arrayProduct);

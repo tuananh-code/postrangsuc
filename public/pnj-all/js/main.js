@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
         autoplay: true,
     });
     splide.mount();
-// });
 
-// document.addEventListener('DOMContentLoaded', function () {
+    // document.addEventListener('DOMContentLoaded', function () {
     var splideTrend = new Splide('#splideTrend', {
         // type: 'loop',
         perMove: 1,
@@ -35,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
     splideTrend.mount();
-// });
+    // });
 
-// document.addEventListener('DOMContentLoaded', function () {
+    // document.addEventListener('DOMContentLoaded', function () {
     var splideBrand = new Splide('#splideBrand', {
         perMove: 1,
         height: 'auto',
@@ -58,9 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
     splideBrand.mount();
-// });
 
-// document.addEventListener('DOMContentLoaded', function () {
+    //TODO:
+    // var splide = <?php echo json_encode($arrayCategory[0]); ?>;
+    // document.addEventListener('DOMContentLoaded', function () {
     var splideSales = new Splide('#splideSales', {
         // type: 'loop',
         perPage: 4,
@@ -75,157 +75,59 @@ document.addEventListener('DOMContentLoaded', function () {
         breakpoints: {
             640: {
                 perPage: 2,
-                height: 240
+                height: 240,
             },
         },
     });
     splideSales.mount();
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-    var splideCollections = new Splide('#splideCollections', {
+    // });
+    var splideSales = new Splide('#splideCollections', {
         // type: 'loop',
         perPage: 4,
         perMove: 1,
-        height: 'auto',
+        height: 350,
         width: '100%',
         // focus: 'center',
         rewindSpeed: 1500,
         rewind: true,
-        autoplay: true,
+        // autoplay: true,
         pagination: false,
         breakpoints: {
             640: {
                 perPage: 2,
+                height: 240,
             },
         },
     });
-    splideCollections.mount();
-// });
+    splideSales.mount();
+    // });
+});
 
-// document.addEventListener('DOMContentLoaded', function () {
-    var splideTradition = new Splide('#splideTradition', {
-        // type: 'loop',
-        perPage: 4,
-        perMove: 1,
-        height: 'auto',
-        width: '100%',
-        // focus: 'center',
-        rewindSpeed: 1500,
-        rewind: true,
-        autoplay: true,
-        pagination: false,
-        breakpoints: {
-            640: {
-                perPage: 2,
+//TODO: for category slide
+$('.slide-category').each(function () {
+    var id = $(this).attr('data-id');
+    var splideId = '#splide-' + id;
+    console.log(splideId);
+    document.addEventListener('DOMContentLoaded', function () {
+        var splideSales = new Splide(splideId, {
+            // type: 'loop',
+            perPage: 4,
+            perMove: 1,
+            height: 350,
+            width: '100%',
+            // focus: 'center',
+            rewindSpeed: 1500,
+            rewind: true,
+            // autoplay: true,
+            pagination: false,
+            breakpoints: {
+                640: {
+                    perPage: 2,
+                    height: 240,
+                },
             },
-        },
+        });
+        splideSales.mount();
+        // });
     });
-    splideTradition.mount();
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-    var splideMarry = new Splide('#splideMarry', {
-        // type: 'loop',
-        perPage: 4,
-        perMove: 1,
-        height: 'auto',
-        width: '100%',
-        // focus: 'center',
-        rewindSpeed: 1500,
-        rewind: true,
-        autoplay: true,
-        pagination: false,
-        breakpoints: {
-            640: {
-                perPage: 2,
-            },
-        },
-    });
-    splideMarry.mount();
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-    var splideEcz = new Splide('#splideEcz', {
-        // type: 'loop',
-        perPage: 4,
-        perMove: 1,
-        height: 'auto',
-        width: '100%',
-        // focus: 'center',
-        rewindSpeed: 1500,
-        rewind: true,
-        autoplay: true,
-        pagination: false,
-        breakpoints: {
-            640: {
-                perPage: 2,
-            },
-        },
-    });
-    splideEcz.mount();
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-    var splideBrace = new Splide('#splideBrace', {
-        // type: 'loop',
-        perPage: 4,
-        perMove: 1,
-        height: 'auto',
-        width: '100%',
-        // focus: 'center',
-        rewindSpeed: 1500,
-        rewind: true,
-        autoplay: true,
-        pagination: false,
-        breakpoints: {
-            640: {
-                perPage: 2,
-            },
-        },
-    });
-    splideBrace.mount();
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-    var splideDisney = new Splide('#splideDisney', {
-        // type: 'loop',
-        perPage: 4,
-        perMove: 1,
-        height: 'auto',
-        width: '100%',
-        // focus: 'center',
-        rewindSpeed: 1500,
-        rewind: true,
-        // autoplay: true
-        pagination: false,
-        breakpoints: {
-            640: {
-                perPage: 2,
-            },
-        },
-    });
-    splideDisney.mount();
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-    var splideWatch = new Splide('#splideWatch', {
-        // type: 'loop',
-        perPage: 4,
-        perMove: 1,
-        height: 'auto',
-        width: '100%',
-        // focus: 'center',
-        rewindSpeed: 1500,
-        rewind: true,
-        // autoplay: true
-        pagination: false,
-        breakpoints: {
-            640: {
-                perPage: 2,
-            },
-        },
-    });
-    splideWatch.mount();
-// });
 });

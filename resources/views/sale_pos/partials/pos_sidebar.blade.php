@@ -74,12 +74,12 @@
 
 
 			<div class="">
-				<iframe style=" border: none; width: 100%; height: 200px" src="https://tygiado.com/nhung-ngoai-te/"></iframe>
+				{{-- <iframe style=" border: none; width: 100%; height: 200px" src="https://tygiado.com/nhung-ngoai-te/"></iframe> --}}
 			</div>
 
 		</div>
 	</div>
 	<div class="col-md-12 text-center" id="suggestion_page_loader" style="display: none;">
-		<i class="fa fa-spinner fa-spin fa-2x"></i>
+		{{-- <i class="fa fa-spinner fa-spin fa-2x"></i> --}}
 	</div>
 </div>
